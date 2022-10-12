@@ -21,19 +21,21 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 20px;
+  margin-bottom: 0;
 }
 .hero .boostpanel h2 {
   text-transform: uppercase;
   margin-top: 20px;
   color: #000;
   margin-left: -5px;
-  font-size: 32px;
+  font-size: 28px;
+  margin-bottom: 0;
 }
 
 .boostDesc p {
-  font-size: 31px;
+  font-size: 32px;
   line-height: 40px;
-  margin-top: 10px;
+  margin-top: 2px;
   text-transform: capitalize;
 }
 .form {
@@ -45,7 +47,7 @@ body {
   width: 90%;
   margin-top: 50px;
 }
-.form .formHd{
+.form .formHd {
   font-size: 22px;
 }
 
@@ -294,5 +296,18 @@ body {
   }
   .navbar-collapse {
     flex: 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .hero .smm h2 {
+    font-size: 24px;
+  }
+  .hero .boostpanel h2 {
+    font-size: 20px;
+  }
+
+  .boostDesc p {
+    font-size: 28px;
   }
 }
