@@ -1,16 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;500;600;700&display=swap");
 body {
   position: relative;
   overflow: hidden;
   background-color: #24d0e0;
   background: linear-gradient(120deg, #31b6ff, #06e9c1);
-
   padding: 0;
   margin: 0;
+  font-family: "Lexend Deca", sans-serif;
+  color: #fff;
 }
+
 .hero {
   position: relative;
   width: 100vw;
   height: 100vh;
+}
+.hero .smm h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
+}
+.hero .boostpanel {
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.boostDesc p {
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 50px;
+  text-align: center;
 }
 
 #landing-mobile-background {
@@ -89,6 +112,10 @@ body {
   opacity: 0.1;
   -webkit-animation: bounce-absolute 17s linear infinite;
   animation: bounce-absolute 17s linear infinite;
+}
+.navbar-toggler:focus {
+  border: none !important;
+  box-shadow: none !important;
 }
 
 @-webkit-keyframes bounce-absolute {
@@ -190,5 +217,19 @@ body {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .boostDesc p,
+  .hero .boostpanel,
+  .hero .smm h2 {
+    text-align: left;
+  }
+  .main{
+    padding: 0 100px;
+  }
+  .header nav{
+    padding: 2px 70px !important;
   }
 }
