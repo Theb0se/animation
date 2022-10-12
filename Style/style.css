@@ -45,6 +45,9 @@ body {
   width: 90%;
   margin-top: 50px;
 }
+.form .formHd{
+  font-size: 22px;
+}
 
 .form form {
   width: 100%;
