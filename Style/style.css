@@ -46,6 +46,8 @@ body {
   z-index: 9999;
   width: 90%;
   margin-top: 50px;
+  border-radius: 15px;
+  border: 2px solid #000000;
 }
 .form .formHd {
   font-size: 22px;
@@ -97,7 +99,7 @@ body {
   background: #353535;
   color: #fff;
   margin-top: 12px;
-  height: 46px;
+  height: 50px;
 }
 .form .google {
   background-color: crimson;
@@ -116,7 +118,7 @@ body {
   font-size: 14px;
 }
 .rememberForget a {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 14px;
   width: 50%;
   color: #5c5c5c;
@@ -134,7 +136,7 @@ body {
   color: #5c5c5c;
 }
 .creatAcount a {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 14px;
   width: 50%;
   color: #000;
