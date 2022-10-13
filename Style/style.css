@@ -254,7 +254,6 @@ body {
   position: fixed;
   bottom: 40px;
   left: 20px;
-  animation-delay: tg-whatapp 3s;
   -webkit-animation: tg-whatapp 3s linear infinite;
   animation: tg-whatapp 3s linear infinite;
 }
