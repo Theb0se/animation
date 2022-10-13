@@ -51,10 +51,25 @@ body {
   padding: 2px 3px;
 }
 .nav-link {
-  font-size: 20px;
+  font-size: 16px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: capitalize;
+  padding: 0 10px;
+  margin-top: 10px;
+  transition: 0.3s ease;
+  margin-right: 10px;
+  color: #000;
+}
+.nav-link:hover {
+  background-color: #d9f55b83;
+  border-radius: 7px;
+}
+
+.active {
+  background-color: #d9f55b83;
+  border-radius: 7px;
+  color: #fff;
 }
 
 .hero .smm h2 {
@@ -239,6 +254,12 @@ body {
   font-weight: 500;
   margin-bottom: 2px;
 }
+.stepText a {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
 .pehlaStep {
   margin-top: 30px !important;
 }
@@ -274,12 +295,34 @@ footer a {
   color: #fff;
   font-weight: 300;
 }
+/* Contact Page */
+.contactHero{
+  height: 100vh;
+}
+
+.contact {
+  padding: 15px;
+  height: 80vh;
+}
+.contactFooter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+
+/* Terms Page */
+.terms .heading h1{
+text-align: center;
+margin-top: 20px;
+color: #ee4b4b;
+}
 
 #landing-mobile-background {
   top: 10px;
   left: 0;
   width: 100%;
   height: inherit;
+  z-index: -5;
 }
 #landing-mobile-background #heart-s-1 {
   width: 40px;
