@@ -50,6 +50,12 @@ body {
   border-radius: 3px;
   padding: 2px 3px;
 }
+.nav-link {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: capitalize;
+}
 
 .hero .smm h2 {
   text-transform: uppercase;
@@ -240,9 +246,17 @@ body {
 .whatsapp {
   position: fixed;
   bottom: 40px;
-  right: 30px;
-  -webkit-animation: bounce-absolute 3s linear infinite;
-  animation: bounce-absolute 3s linear infinite;
+  right: 20px;
+  -webkit-animation: tg-whatapp 3s linear infinite;
+  animation: tg-whatapp 3s linear infinite;
+}
+.telegram {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  animation-delay: tg-whatapp 3s;
+  -webkit-animation: tg-whatapp 3s linear infinite;
+  animation: tg-whatapp 3s linear infinite;
 }
 
 footer {
@@ -394,6 +408,21 @@ footer a {
   50% {
     -webkit-transform: translateY(-30px);
     transform: translateY(-30px);
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes tg-whatapp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     -webkit-transform: translateY(0);
