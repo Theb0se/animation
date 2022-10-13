@@ -21,10 +21,15 @@
   <body>
     <div class="hero">
       <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="img/club (2).png" alt="" width="200px" />
+            <a class="navbar-brand text-center align-items-center" href="#">
+              <img src="img/logo.png" alt="" width="80px" />
+              <div class="name ms-2">
+                <p class="m-0 p-0 boost">BOOST CLUB</p>
+                <hr class="p-0 m-0" />
+                <p class="m-0 p-0 smm">SMM PANEL</p>
+              </div>
             </a>
             <button
               class="navbar-toggler border-0"
@@ -37,7 +42,10 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div
+              class="collapse navbar-collapse text-center bgw"
+              id="navbarNavDropdown"
+            >
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#"
@@ -54,71 +62,135 @@
             </div>
           </div>
         </nav>
+      </div>
 
-        <div class="main">
-          <div class="smm">
-            <h2>SMMBOOSTCLUB.com</h2>
-          </div>
+      <div class="main">
+        <div class="smm">
+          <h2>SMMBOOSTCLUB.com</h2>
+        </div>
 
-          <div class="boostpanel">
-            <h2>boost Club Panel</h2>
-          </div>
+        <div class="boostpanel">
+          <h2>boost Club Panel</h2>
+        </div>
 
-          <div class="boostDesc">
-            <p>
-              Best SMM Service <br />
-              you will get Best & Best
-              <span style="color: #fbdf07; font-weight: 700">QUALITY</span>
-            </p>
-          </div>
+        <div class="boostDesc">
+          <p>
+            Best SMM Service <br />
+            you will get Best & Best
+            <span style="color: #fbdf07; font-weight: 700">QUALITY</span>
+          </p>
+        </div>
 
-          <div class="form">
-            <p class="text-black formHd">Sign In</p>
-            <form method="post">
-              <div class="ip">
-                <div class="username">
+        <div class="form">
+          <p class="text-black formHd">Sign In</p>
+          <form method="post">
+            <div class="ip">
+              <div class="username">
+                <input
+                  type="text"
+                  name="text"
+                  id="username"
+                  placeholder="Username"
+                />
+              </div>
+              <div class="password mt-3">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="remember mt-4">
+                <div class="form-check">
                   <input
-                    type="text"
-                    name="text"
-                    id="username"
-                    placeholder="Username"
+                    class="form-check-input ms-0 me-2"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
                   />
-                </div>
-                <div class="password mt-3">
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Password"
-                  />
-                </div>
-                <div class="remember mt-4">
-                  <div class="form-check">
-                    <input
-                      class="form-check-input ms-0 me-2"
-                      type="checkbox"
-                      value=""
-                      id="flexCheckDefault"
-                    />
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Remember Me
-                    </label>
-                  </div>
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Remember Me
+                  </label>
                 </div>
               </div>
-              <button>Sign In</button>
-            </form>
-            <div class="creatAcount text-capitalize">
-              <p>Do not have an account ? <a href="/signup">Sign Up</a></p>
             </div>
-            <div class="rememberForget">
-              <a href="#">Forget Password ?</a>
-            </div>
+            <button>Sign In</button>
+          </form>
+          <div class="creatAcount text-capitalize">
+            <p>Do not have an account ? <a href="/signup">Sign Up</a></p>
+          </div>
+          <div class="rememberForget">
+            <a href="#">Forget Password ?</a>
+          </div>
 
-            <button class="google">Login With Google</button>
+          <button class="google">Login With Google</button>
+        </div>
+        <div class="steps">
+          <img src="img/tg.png" alt="" width="450px" />
+
+          <div class="start">
+            <h2 class="startmain">Where to begin ?</h2>
+            <p>
+              Want to start placing orders on our panel ? Follow these 4 easy
+              steps.
+            </p>
+          </div>
+          <div
+            class="stepcontainer d-flex align-items-center justify-content-center flex-column"
+          >
+            <div class="step pehlaStep">
+              <div class="stepCounter">1</div>
+              <div class="stepText">
+                <h4>Register In Panel</h4>
+                <p>First You Register In Panel Via A Gmail</p>
+              </div>
+            </div>
+            <div class="step mt-4">
+              <div class="stepCounter">2</div>
+              <div class="stepText">
+                <h4>Sign In</h4>
+                <p>Sign In With New Account & Start A New Life</p>
+              </div>
+            </div>
+            <div class="step mt-4">
+              <div class="stepCounter">3</div>
+              <div class="stepText">
+                <h4>Add Funds</h4>
+                <p>Add Funds In Your Account Via Payment Method You Choose</p>
+              </div>
+            </div>
+            <div class="step mt-4">
+              <div class="stepCounter">4</div>
+              <div class="stepText">
+                <h4>Select Service</h4>
+                <p>Select Your Service For Grow Your Business</p>
+              </div>
+            </div>
+            <div class="step mt-4">
+              <div class="stepCounter">5</div>
+              <div class="stepText">
+                <h4>Place Your Order</h4>
+                <p>Place Your Best Order Now</p>
+              </div>
+            </div>
+            <div class="step mt-4">
+              <div class="stepCounter">6</div>
+              <div class="stepText">
+                <h4>Enjoy Your Magical Success</h4>
+                <p>Your Sucess Become The Noise Further</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <footer>
+        <p>© 2022 Boostclub.com. All Rights Reserved</p>
+        <p>
+          Design and developed by
+          <a href="https://theb0se.com/" target="_blank">Rishabh Bose</a>
+        </p>
+      </footer>
     </div>
     <div id="landing-mobile-background">
       <img
@@ -171,6 +243,11 @@
         alt="Hearts"
         src="img/mobile-heart-10p.png"
       />
+    </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/+917489638471"
+        ><img src="img/whatsapp.png" alt="whatspp" width="50px" height="50px"
+      /></a>
     </div>
   </body>
 </html>

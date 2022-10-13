@@ -6,17 +6,51 @@ body {
   margin: 0;
   font-family: "Lexend Deca", sans-serif;
   color: #fff;
+  position: relative;
+  height: 100%;
+  width: 100vw;
 }
 
+.header {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
 .hero {
-  position: relative;
+  height: fit-content;
   width: 100vw;
-  height: 100vh;
-  z-index: 77;
+}
+.name {
+  margin-bottom: -5px;
+}
+.name .boost {
+  font-size: 16px;
+  color: rgb(250, 87, 120);
+  font-weight: 700;
+}
+.name .smm {
+  font-size: 13px;
+  color: #000;
+  font-weight: 500;
+}
+.name hr {
+  color: darkred;
+  opacity: 0.9;
+  border-top: 1.2px solid;
 }
 .hero .main {
   padding: 10px 18px;
 }
+.navbar-toggler-icon {
+  background-image: url(../img/icons8-menu-30.png);
+  width: 1.6em;
+  height: 1.5em;
+}
+.navbar-toggler {
+  border: 2px solid rgb(250, 87, 120) !important;
+  border-radius: 3px;
+  padding: 2px 3px;
+}
+
 .hero .smm h2 {
   text-transform: uppercase;
   font-weight: 700;
@@ -42,9 +76,8 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 20px 30px;
   border-radius: 2px;
-  position: absolute;
   z-index: 9999;
-  width: 90%;
+  width: 100%;
   margin-top: 50px;
   border-radius: 15px;
   border: 2px solid #000000;
@@ -90,7 +123,6 @@ body {
   outline: none;
   border-radius: 4px;
   border: 2px solid #ff8400;
-
 }
 .form button {
   width: 100%;
@@ -141,9 +173,97 @@ body {
   width: 50%;
   color: #000;
 }
+.steps {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.steps img {
+  width: 70vw;
+}
+
+.steps .start {
+  margin-top: 60px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  border: 2px solid rgba(250, 87, 120);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 30px;
+  margin-top: 50px !important;
+}
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.stepCounter {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(250, 87, 120);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  position: absolute;
+  top: -25px;
+  left: calc(50% - 25px);
+  font-size: 20px;
+}
+.stepText {
+  width: 100%;
+}
+.stepText h4 {
+  font-size: 18px;
+  color: #ee4b4b;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.stepText p {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.pehlaStep {
+  margin-top: 30px !important;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  -webkit-animation: bounce-absolute 3s linear infinite;
+  animation: bounce-absolute 3s linear infinite;
+}
+
+footer {
+  background-color: rgba(250, 87, 120);
+  margin-top: 40px;
+  text-align: center;
+  padding: 12px;
+}
+footer p {
+  margin: 0;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+}
+footer a {
+  color: #fff;
+  font-weight: 300;
+}
 
 #landing-mobile-background {
-  top: 80px;
+  top: 10px;
   left: 0;
   width: 100%;
   height: inherit;
@@ -151,7 +271,7 @@ body {
 #landing-mobile-background #heart-s-1 {
   width: 40px;
   height: 40px;
-  top: 19%;
+  top: 12%;
   left: 20%;
   position: absolute;
   opacity: 0.3;
@@ -161,7 +281,7 @@ body {
 #landing-mobile-background #heart-s-2 {
   width: 32px;
   height: 32px;
-  top: 80%;
+  top: 50%;
   left: 30%;
   position: absolute;
   opacity: 0.27;
@@ -171,7 +291,7 @@ body {
 #landing-mobile-background #heart-s-3 {
   width: 35px;
   height: 35px;
-  top: 40%;
+  top: 20%;
   left: 80%;
   position: absolute;
   opacity: 0.23;
@@ -181,7 +301,7 @@ body {
 #landing-mobile-background #heart-b-1 {
   width: 75px;
   height: 75px;
-  top: 90%;
+  top: 70%;
   left: 5%;
   position: absolute;
   opacity: 0.1;
@@ -219,7 +339,6 @@ body {
   animation: bounce-absolute 17s linear infinite;
 }
 .navbar-toggler:focus {
-  border: none !important;
   box-shadow: none !important;
 }
 
@@ -327,6 +446,15 @@ body {
   }
   .navbar-collapse {
     flex: 0;
+  }
+  .remember {
+    display: block;
+  }
+  .step {
+    width: 60%;
+  }
+  .steps img {
+    width: 400px;
   }
 }
 
