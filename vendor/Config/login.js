@@ -16,6 +16,7 @@ window.onload = function () {
     $("#spinner").removeClass("d-none");
 
     axios
+    
       .post("https://smmboostclub.herokuapp.com/user/login", data)
       .then(function (response) {
         console.log(response.data);
