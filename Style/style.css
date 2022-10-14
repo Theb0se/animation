@@ -286,7 +286,7 @@ body {
 
 .whatsapp {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   bottom: 40px;
   right: 20px;
   -webkit-animation: tg-whatapp 3s linear infinite;
@@ -294,7 +294,7 @@ body {
 }
 .telegram {
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   bottom: 40px;
   left: 20px;
   -webkit-animation: tg-whatapp 3s linear infinite;
