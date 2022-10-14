@@ -1,0 +1,66 @@
+.homepageHero {
+  position: relative;
+  z-index: 999;
+}
+
+.card {
+  width: 100%;
+}
+.homepageHero .userDetails {
+  color: black;
+}
+
+.userDetails .topic p {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.userDetails .detailstext {
+  font-size: 21px;
+  font-weight: 300;
+  margin-left: 53px;
+  margin-bottom: 0;
+}
+.newOrder label {
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 3px;
+  margin-left: 3px;
+}
+.newOrder .panel-body {
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  color: #000;
+  font-size: 14px;
+}
+
+.newOrder .link p {
+  color: #000;
+  font-size: 12px;
+  font-weight: 300;
+  margin-top: 3px;
+  margin-left: 3px;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 420px) {
+  .userDetails .topic p {
+    font-size: 16px;
+    font-weight: 200;
+    display: flex;
+    width: fit-content;
+  }
+
+  .userDetails .detailstext {
+    font-size: 20px;
+    font-weight: 300;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .card {
+    width: 600px !important;
+  }
+}

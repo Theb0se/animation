@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Style/Bootstrap/bootstrap.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="Style/style.css" />
+    <link rel="stylesheet" href="Style/homepage.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vendor/Bootstrap/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/Bootstrap/pooper.min.js"></script>
+    <script src="/vendor/Config/Signup.js" defer></script>
+  </head>
+  <body>
+    <div class="hero homepageHero">
+      <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+          <div class="container-fluid">
+            <a class="navbar-brand text-center align-items-center" href="/">
+              <img src="img/logo.png" alt="" width="80px" />
+              <div class="name ms-2">
+                <p class="m-0 p-0 boost">BOOST CLUB</p>
+                <hr class="p-0 m-0" />
+                <p class="m-0 p-0 smm">SMM PANEL</p>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav text-start mt-2">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">New Order</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link active" href="#">Services</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="#">Track Orders</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="#">Add Funds</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="#">Support</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="#">Updates</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="#">Acount</a>
+                </li>
+                <li class="nav-item mt-3 mb-5">
+                  <a class="nav-link">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="main">
+        <div
+          class="userDetails d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="card p-2 bg-light mt-5">
+            <div class="topic d-flex align-items-center">
+              <img src="img/cart.png" alt="" height="40px" />
+              <p class="m-0 ms-3">Total Orders</p>
+            </div>
+            <p id="totalOrder" class="detailstext">785487</p>
+          </div>
+          <div class="card p-2 bg-light mt-2">
+            <div class="topic d-flex align-items-center">
+              <img src="img/cart.png" alt="" height="40px" />
+              <p class="m-0 ms-3">Account Balance</p>
+            </div>
+            <p id="totalOrder" class="detailstext">≈ ₹ 548</p>
+          </div>
+          <div class="card p-2 bg-light mt-2">
+            <div class="topic d-flex align-items-center">
+              <img src="img/cart.png" alt="" height="40px" />
+              <p class="m-0 ms-3">Account Spendings</p>
+            </div>
+            <p id="totalOrder" class="detailstext">₹ 1587</p>
+          </div>
+          <div class="card p-2 bg-light mt-2">
+            <div class="topic d-flex align-items-center">
+              <img src="img/cart.png" alt="" height="40px" />
+              <p class="m-0 ms-3">Account Status</p>
+            </div>
+            <p id="totalOrder" class="detailstext">Reseller</p>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="newOrder card mt-5 bg-light p-3">
+            <div class="category">
+              <label for="serviceSelect">Category</label>
+              <select
+                id="serviceSelect"
+                class="form-select form-select-sm mt-1"
+                aria-label=".form-select-sm example"
+              >
+                <option value="935" selected>
+                  ❖ Telegram Chanel Members [ Exclusive Services ]
+                </option>
+                <option value="141564">❖ Telegram Chanel Members</option>
+                <option value="17939">❖ Telegram Post Views [ Stable ]</option>
+                <option value="934">❖ Telegram Post Views</option>
+                <option value="33955">❖ Telegram Reactions</option>
+                <option value="2077">❖ Telegram Future Post Views</option>
+                <option value="17053">❖ Telegram Russia 🇷🇺</option>
+              </select>
+            </div>
+            <div class="service mt-3">
+              <label for="serviceSelect">Service</label>
+              <select
+                id="serviceSelect"
+                class="form-select form-select-sm mt-1"
+                aria-label=".form-select-sm example"
+              >
+                <option value="935" selected>
+                  ❖ Telegram Chanel Members [ Exclusive Services ]
+                </option>
+                <option value="141564">❖ Telegram Chanel Members</option>
+                <option value="17939">❖ Telegram Post Views [ Stable ]</option>
+                <option value="934">❖ Telegram Post Views</option>
+                <option value="33955">❖ Telegram Reactions</option>
+                <option value="2077">❖ Telegram Future Post Views</option>
+                <option value="17053">❖ Telegram Russia 🇷🇺</option>
+              </select>
+            </div>
+
+            <div class="serviceDesc mt-4">
+              <label for="serviceSelect">Description</label>
+              <div class="panel-body">
+                🕕 Instant <br />⚡ 10k-20k/day<br />💎 HQ, Non Drop<br /><br />⚠️
+                Service Is 100% Non Drop, But In Telegram We Do Not Provide Any
+                Refill Guarantee. Its Just Sold As Non Drop &amp; Working Non
+                Drop From Past 5-6 Months
+              </div>
+            </div>
+
+            <div class="link mt-4">
+              <label for="link">Link</label>
+              <input class="form-control" id="linkInput" rows="1" />
+            </div>
+            <div class="link mt-4">
+              <label for="link">Quantity</label>
+              <input
+                type="number"
+                class="form-control"
+                id="qntInput"
+                rows="1"
+              />
+              <p>Min: 100 - Max: 5000</p>
+            </div>
+            <div class="link mt-3">
+              <label for="link">Charge</label>
+              <input
+                type="number"
+                class="form-control"
+                id="qntInput"
+                disabled
+              />
+            </div>
+
+            <div class="bttn mt-3">
+              <button type="button" class="btn btn-secondary">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="contactFooter">
+        <p>© 2022 Smmboostclub.com All Rights Reserved</p>
+        <p>
+          Design And Developed By
+          <a href="https://theb0se.com/" target="_blank">Rishabh Bose</a>
+        </p>
+      </footer>
+    </div>
+    <div id="landing-mobile-background">
+      <img
+        id="heart-s-1"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+      <img
+        id="heart-s-2"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+      <img
+        id="heart-s-3"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+
+      <img
+        id="heart-b-1"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-2"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-3"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-4"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+    </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/+919516945996"
+        ><img src="img/whatsapp.png" alt="whatspp" width="50px" height="50px"
+      /></a>
+    </div>
+    <div class="telegram">
+      <a href="https://t.me/+aMXCGa6ei8NkMDM1 "
+        ><img src="img/telegram.png" alt="whatspp" width="50px" height="50px"
+      /></a>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const item = localStorage.getItem("user");
+        if (!item) {
+          window.location = "/";
+        }
+      });
+    </script>
+  </body>
+</html>

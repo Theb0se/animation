@@ -12,10 +12,13 @@
       rel="stylesheet"
       type="text/css"
     />
-
-    <script src="vendor/Bootstrap/bootstrap.min.js"></script>
-    <script src="vendor/Bootstrap/pooper.min.js"></script>
     <link rel="stylesheet" href="Style/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vendor/Bootstrap/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/Bootstrap/pooper.min.js"></script>
+    <script src="/vendor/Config/Signup.js" defer></script>
   </head>
   <body>
     <div class="hero">
@@ -47,9 +50,6 @@
                   <a class="nav-link" aria-current="page" href="/">Sign in</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/services">Services</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link active" href="signup">Sign Up</a>
                 </li>
                 <li class="nav-item">
@@ -69,16 +69,14 @@
       <div class="main">
         <div class="signup">
           <div class="form">
-            <p class="text-black formHd">Sign In</p>
+            <div class="LogingMsgContainer" id="loginMsgContainer">
+              <div class="loginMsg" id="signMsg">Sign In Successful</div>
+            </div>
+            <p class="text-black formHd">Sign Up</p>
             <form method="post">
               <div class="ip">
                 <div class="">
-                  <input
-                    type="text"
-                    name="text"
-                    id="username"
-                    placeholder="Name"
-                  />
+                  <input type="text" name="text" id="name" placeholder="Name" />
                 </div>
                 <div class="">
                   <input
@@ -89,7 +87,12 @@
                   />
                 </div>
                 <div class="">
-                  <input type="tel" name="tel" id="tel" placeholder="Number" />
+                  <input
+                    type="tel"
+                    name="tel"
+                    id="phone"
+                    placeholder="Number"
+                  />
                 </div>
 
                 <div class="">
@@ -104,7 +107,7 @@
                   <input
                     type="text"
                     name="text"
-                    id="username"
+                    id="cnfPassword"
                     placeholder="Confirm Password"
                   />
                 </div>
@@ -123,11 +126,20 @@
                   </div>
                 </div>
               </div>
-              <button>Sign Up</button>
+              <button id="signUpBtn">
+                Sign Up
+                <div
+                  class="spinner-border text-danger spinner-border-sm d-none ms-3"
+                  role="status"
+                  id="spinner"
+                >
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </button>
             </form>
             <button class="google">Signup With Google</button>
             <div class="creatAcount text-capitalize text-center">
-              <p>Already Have An Account ? <a href="/">Signin</a></p>
+              <p>Already Have An Account ? <a href="/">Sign In</a></p>
             </div>
           </div>
         </div>
@@ -139,6 +151,27 @@
           <a href="https://theb0se.com/" target="_blank">Rishabh Bose</a>
         </p>
       </footer>
+      <!-- Toast -->
+      <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-bs-autohide="false"
+        >
+          <div class="toast-header">
+            <strong class="me-auto" id="toastMsg">Bootstrap</strong>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="landing-mobile-background">
       <img

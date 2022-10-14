@@ -13,10 +13,13 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="Style/style.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="vendor/Bootstrap/bootstrap.min.js"></script>
     <script src="vendor/Bootstrap/pooper.min.js"></script>
-    <link rel="stylesheet" href="Style/style.css" />
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/Config/login.js"></script>
   </head>
   <body>
     <div class="hero">
@@ -48,15 +51,9 @@
             <div class="collapse navbar-collapse bgw" id="navbarNavDropdown">
               <ul class="navbar-nav text-start mt-2">
                 <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="/index.html"
+                  <a class="nav-link active" aria-current="page" href="/"
                     >Sign in</a
                   >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/signup.html">Sign Up</a>
@@ -68,7 +65,7 @@
                   <a class="nav-link" href="/contact.html">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/terms.html">Terms & Conditions</a>
+                  <a class="nav-link" href="#">Terms & Conditions</a>
                 </li>
               </ul>
             </div>
@@ -94,15 +91,18 @@
         </div>
         <div class="signin">
           <div class="form">
+            <div class="LogingMsgContainer" id="loginMsgContainer">
+              <div class="loginMsg" id="signMsg">Sign In Successful</div>
+            </div>
             <p class="text-black formHd">Sign In</p>
             <form method="post">
               <div class="ip">
                 <div class="username">
                   <input
-                    type="text"
-                    name="text"
-                    id="username"
-                    placeholder="Username"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email / Username"
                   />
                 </div>
                 <div class="password mt-3">
@@ -127,7 +127,16 @@
                   </div>
                 </div>
               </div>
-              <button>Sign In</button>
+              <button id="loginBtn">
+                Sign In
+                <div
+                  class="spinner-border text-danger spinner-border-sm d-none ms-3"
+                  role="status"
+                  id="spinner"
+                >
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </button>
             </form>
             <div class="creatAcount text-capitalize">
               <p>Do not have an account ? <a href="/signup.html">Sign Up</a></p>
@@ -265,5 +274,14 @@
         ><img src="img/telegram.png" alt="whatspp" width="50px" height="50px"
       /></a>
     </div>
+
+    <script>
+      $(document).ready(function () {
+        const item = localStorage.getItem("user");
+        if (item) {
+          window.location = "/homepage.html";
+        }
+      });
+    </script>
   </body>
 </html>
