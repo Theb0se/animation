@@ -68,7 +68,7 @@
                   <a class="nav-link" href="#">Acount</a>
                 </li>
                 <li class="nav-item mt-3 mb-5">
-                  <a class="nav-link">Logout</a>
+                  <a class="nav-link" id="logout">Logout</a>
                 </li>
               </ul>
             </div>
@@ -269,6 +269,11 @@
         if (!item) {
           window.location = "/";
         }
+
+        $("#logout").click(function () {
+          localStorage.removeItem("user");
+          window.location = "/";
+        });
       });
     </script>
   </body>
