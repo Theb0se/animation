@@ -26,33 +26,50 @@
   margin-left: 53px;
   margin-bottom: 0;
 }
-.newOrder label {
+.acountDetails label {
   color: #000;
+  font-size: 16px;
   font-weight: 500;
   margin-bottom: 3px;
   margin-left: 3px;
 }
-.newOrder .panel-body {
-  border: 1px solid #ced4da;
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  color: #000;
+
+.acountDetails input {
+  font-weight: 300;
+}
+
+.acountDetails .btn-primary {
+  background-color: orange;
+  border: 2px solid #000;
+  width: 150px;
   font-size: 14px;
 }
 
-.newOrder .link p {
-  color: #000;
-  font-size: 12px;
-  font-weight: 300;
-  margin-top: 3px;
-  margin-left: 3px;
-  margin-bottom: 0;
+.acountDetails .emailChangeButton{
+    width: 180px;
 }
 
-.bttn .btn-secondary {
-  background-color: orange;
-  border: 2px solid #000;
+.acountDetails .EmailMsgContainer {
+  margin-top: 5px;
+  display: none;
+  margin-bottom: 20px;
+}
+.acountDetails .EmailMsg {
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px ;
+  border-radius: 5px;
+}
+
+.modal-dialog {
+  color: #000;
+}
+
+.modal-backdrop {
+  --bs-backdrop-zindex: 10;
 }
 
 @media screen and (max-width: 420px) {

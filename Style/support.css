@@ -1,0 +1,7 @@
+.support{
+    display: flex;align-items: center;justify-content: center;
+}
+.support .form-label{
+    font-size: 14px;
+    font-weight: 300;
+}

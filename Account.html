@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Style/Bootstrap/bootstrap.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="Style/style.css" />
+    <link rel="stylesheet" href="Style/homepage.css" />
+    <link rel="stylesheet" href="Style/Account.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vendor/Bootstrap/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/Bootstrap/pooper.min.js"></script>
+    <script src="/vendor/Config/account.js" defer></script>
+  </head>
+  <body>
+    <div class="hero homepageHero">
+      <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+          <div class="container-fluid">
+            <a class="navbar-brand text-center align-items-center" href="/">
+              <img src="img/logo.png" alt="" width="80px" />
+              <div class="name ms-2">
+                <p class="m-0 p-0 boost">BOOST CLUB</p>
+                <hr class="p-0 m-0" />
+                <p class="m-0 p-0 smm">SMM PANEL</p>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav text-start mt-2">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/homepage.html">New Order</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/services.html">Services</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/trackorder.html">Track Orders</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/addfund.html">Add Funds</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/support.html">Support</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/update.html">Updates</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link active" href="/Account.html">Account</a>
+                </li>
+                <li class="nav-item mt-3 mb-5">
+                  <a class="nav-link" id="logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="main acountDetails">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center mt-3"
+        >
+          <div class="card p-3 bg-light">
+            <div class="username">
+              <label for="userName">User Name</label>
+              <input
+                class="form-control"
+                type="text"
+                id="userName"
+                value=""
+                aria-label="readonly input example"
+                disabled
+              />
+            </div>
+            <div class="username mt-4">
+              <label for="userName">Email</label>
+              <input
+                class="form-control"
+                type="email"
+                id="userEmail"
+                value="Readonly input "
+                aria-label="readonly input example"
+                disabled
+              />
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-primary mt-4"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Change Email
+            </button>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-dialog-centered" tabindex="-1">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Change Email Address
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="username mt-1">
+                      <div class="EmailMsgContainer" id="EmailMsgContainer">
+                        <div class="EmailMsg" id="emailMsg">
+                          Sign In Successful
+                        </div>
+                      </div>
+                      <label for="userName">Current Email</label>
+                      <input
+                        class="form-control"
+                        type="email"
+                        id="currentUserEmail"
+                        value=""
+                        aria-label="readonly input example"
+                        disabled
+                      />
+                    </div>
+                    <div class="username mt-3">
+                      <label for="userName">New Email</label>
+                      <input class="form-control" type="email" id="newEmail" />
+                    </div>
+                    <div class="username mt-3">
+                      <label for="userName">Password</label>
+                      <input
+                        class="form-control"
+                        type="password"
+                        id="EmailPassword"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn emailChangeButton btn-primary d-flex align-items-center justify-content-center"
+                      id="updateEmailBtn"
+                    >
+                      Save changes
+                      <div
+                        class="spinner-border text-danger spinner-border-sm d-none ms-3"
+                        role="status"
+                        id="spinner"
+                      >
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card p-3 bg-light">
+            <form>
+              <div class="username mt-3">
+                <label for="userName">Current Password</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="updatePassword"
+                />
+              </div>
+              <div class="username mt-3">
+                <label for="userName">New Password</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="updatePassword"
+                />
+              </div>
+              <div class="username mt-3">
+                <label for="userName">Confirm New Password</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="cnfupdatePassword"
+                />
+              </div>
+
+              <button type="button" class="btn btn-primary mt-4">
+                Change Password
+              </button>
+            </form>
+          </div>
+
+          <div class="card p-3 bg-light timezone">
+            <form>
+              <div class="username mt-3">
+                <label for="timezone">Time Zone</label>
+                <select
+                  name="SettingsFrom[timezone]"
+                  id="timezone"
+                  class="form-select"
+                  aria-label="Default select example"
+                >
+                  <option value="-43200">
+                    (UTC -12:00) Baker/Howland Island
+                  </option>
+                  <option value="-39600">(UTC -11:00) Niue</option>
+                  <option value="-36000">
+                    (UTC -10:00) Hawaii-Aleutian Standard Time, Cook Islands,
+                    Tahiti
+                  </option>
+                  <option value="-34200">(UTC -9:30) Marquesas Islands</option>
+                  <option value="-32400">
+                    (UTC -9:00) Alaska Standard Time, Gambier Islands
+                  </option>
+                  <option value="-28800">
+                    (UTC -8:00) Pacific Standard Time, Clipperton Island
+                  </option>
+                  <option value="-25200">
+                    (UTC -7:00) Mountain Standard Time
+                  </option>
+                  <option value="-21600">
+                    (UTC -6:00) Central Standard Time
+                  </option>
+                  <option value="-18000">
+                    (UTC -5:00) Eastern Standard Time, Western Caribbean
+                    Standard Time
+                  </option>
+                  <option value="-16200">
+                    (UTC -4:30) Venezuelan Standard Time
+                  </option>
+                  <option value="-14400">
+                    (UTC -4:00) Atlantic Standard Time, Eastern Caribbean
+                    Standard Time
+                  </option>
+                  <option value="-12600">
+                    (UTC -3:30) Newfoundland Standard Time
+                  </option>
+                  <option value="-10800">
+                    (UTC -3:00) Argentina, Brazil, French Guiana, Uruguay
+                  </option>
+                  <option value="-7200">
+                    (UTC -2:00) South Georgia/South Sandwich Islands
+                  </option>
+                  <option value="-3600">
+                    (UTC -1:00) Azores, Cape Verde Islands
+                  </option>
+                  <option value="0">
+                    (UTC) Greenwich Mean Time, Western European Time
+                  </option>
+                  <option value="3600">
+                    (UTC +1:00) Central European Time, West Africa Time
+                  </option>
+                  <option value="7200">
+                    (UTC +2:00) Central Africa Time, Eastern European Time,
+                    Kaliningrad Time
+                  </option>
+                  <option value="10800">
+                    (UTC +3:00) Moscow Time, East Africa Time, Arabia Standard
+                    Time
+                  </option>
+                  <option value="12600">(UTC +3:30) Iran Standard Time</option>
+                  <option value="14400">
+                    (UTC +4:00) Azerbaijan Standard Time, Samara Time
+                  </option>
+                  <option value="16200">(UTC +4:30) Afghanistan</option>
+                  <option value="18000">
+                    (UTC +5:00) Pakistan Standard Time, Yekaterinburg Time
+                  </option>
+                  <option value="19800" selected="">
+                    (UTC +5:30) Indian Standard Time, Sri Lanka Time
+                  </option>
+                  <option value="20700">(UTC +5:45) Nepal Time</option>
+                  <option value="21600">
+                    (UTC +6:00) Bangladesh Standard Time, Bhutan Time, Omsk Time
+                  </option>
+                  <option value="23400">
+                    (UTC +6:30) Cocos Islands, Myanmar
+                  </option>
+                  <option value="25200">
+                    (UTC +7:00) Krasnoyarsk Time, Cambodia, Laos, Thailand,
+                    Vietnam
+                  </option>
+                  <option value="28800">
+                    (UTC +8:00) Australian Western Standard Time, Beijing Time,
+                    Irkutsk Time
+                  </option>
+                  <option value="31500">
+                    (UTC +8:45) Australian Central Western Standard Time
+                  </option>
+                  <option value="32400">
+                    (UTC +9:00) Japan Standard Time, Korea Standard Time,
+                    Yakutsk Time
+                  </option>
+                  <option value="34200">
+                    (UTC +9:30) Australian Central Standard Time
+                  </option>
+                  <option value="36000">
+                    (UTC +10:00) Australian Eastern Standard Time, Vladivostok
+                    Time
+                  </option>
+                  <option value="37800">(UTC +10:30) Lord Howe Island</option>
+                  <option value="39600">
+                    (UTC +11:00) Srednekolymsk Time, Solomon Islands, Vanuatu
+                  </option>
+                  <option value="41400">(UTC +11:30) Norfolk Island</option>
+                  <option value="43200">
+                    (UTC +12:00) Fiji, Gilbert Islands, Kamchatka Time, New
+                    Zealand Standard Time
+                  </option>
+                  <option value="45900">
+                    (UTC +12:45) Chatham Islands Standard Time
+                  </option>
+                  <option value="46800">
+                    (UTC +13:00) Samoa Time Zone, Phoenix Islands Time, Tonga
+                  </option>
+                  <option value="50400">(UTC +14:00) Line Islands</option>
+                </select>
+              </div>
+
+              <button type="button" class="btn btn-primary mt-4">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="contactFooter">
+        <p>© 2022 Smmboostclub.com All Rights Reserved</p>
+        <p>
+          Design And Developed By
+          <a href="https://theb0se.com/" target="_blank">Rishabh Bose</a>
+        </p>
+      </footer>
+    </div>
+    <div id="landing-mobile-background">
+      <img
+        id="heart-s-1"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+      <img
+        id="heart-s-2"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+      <img
+        id="heart-s-3"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+
+      <img
+        id="heart-b-1"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-2"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-3"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-4"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+    </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/+919516945996"
+        ><img src="img/whatsapp.png" alt="whatspp" width="50px" height="50px"
+      /></a>
+    </div>
+    <div class="telegram">
+      <a href="https://t.me/+aMXCGa6ei8NkMDM1 "
+        ><img src="img/telegram.png" alt="whatspp" width="50px" height="50px"
+      /></a>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const item = localStorage.getItem("user");
+        if (!item) {
+          window.location = "/";
+        }
+
+        $("#logout").click(function () {
+          localStorage.removeItem("user");
+          window.location = "/";
+        });
+      });
+    </script>
+  </body>
+</html>

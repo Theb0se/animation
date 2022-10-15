@@ -1,6 +1,5 @@
 window.onload = function () {
   const loginButton = document.getElementById("loginBtn");
-  const toastLiveExample = document.getElementById("liveToast");
 
   const signin = (e) => {
     const email = document.getElementById("email").value;
@@ -16,7 +15,7 @@ window.onload = function () {
     $("#spinner").removeClass("d-none");
 
     axios
-    
+
       .post("https://smmboostclub.herokuapp.com/user/login", data)
       .then(function (response) {
         console.log(response.data);
