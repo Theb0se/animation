@@ -75,7 +75,7 @@ window.onload = function () {
       $("#spinner2").addClass("d-none");
     } else {
       axios
-        .post("http://localhost:3000/user/updatePassword", data)
+        .post("https://smmboostclub.herokuapp.com/user/updatePassword", data)
         .then(function (response) {
           console.log(response.data);
           const userData = JSON.stringify(response.data);
