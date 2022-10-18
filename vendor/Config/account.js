@@ -31,7 +31,7 @@ window.onload = function () {
         $("#userEmail").val(response.data.email);
         $("#currentUserEmail").val(response.data.email);
         $("#newEmail").val("");
-        $("#emailMsg").text("Email Change Successful");
+        $("#emailMsg").text("Successfully Changed Email Address");
         $("#emailMsg").css("background-color", "rgba(49, 248, 42, 0.39)");
         $("#EmailMsgContainer").show();
         $("#spinner").addClass("d-none");
