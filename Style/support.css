@@ -1,7 +1,22 @@
-.support{
-    display: flex;align-items: center;justify-content: center;
+.support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.support .form-label{
-    font-size: 14px;
-    font-weight: 300;
+.support .form-label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.trackorder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trackorder .card{
+  width: 100% !important;
+}
+
+.trackorder .table {
+    width: 1400px;
 }

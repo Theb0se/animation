@@ -1,0 +1,14 @@
+tbody {
+  white-space: nowrap;
+}
+
+.updateMain {
+  padding: 15px 4px !important;
+}
+.updateMain table {
+  width: 800px !important;
+}
+
+.updateMain table tbody {
+  white-space: inherit;
+}

@@ -18,7 +18,7 @@
     <script src="vendor/Bootstrap/bootstrap.min.js"></script>
     <script src="vendor/jquery/jquery.js"></script>
     <script src="vendor/Bootstrap/pooper.min.js"></script>
-    <script src="/vendor/Config/Signup.js" defer></script>
+    <script src="/vendor/Config/order.js" defer></script>
   </head>
   <body>
     <div class="hero homepageHero">
@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav text-start mt-2">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/homepage.html"
+                  <a class="nav-link" aria-current="page" href="/homepage.html"
                     >New Order</a
                   >
                 </li>
@@ -58,7 +58,7 @@
                   <a class="nav-link" href="/trackorder.html">Track Orders</a>
                 </li>
                 <li class="nav-item mt-3">
-                  <a class="nav-link" href="/addfund.html">Add Funds</a>
+                  <a class="nav-link active" href="/addfund.html">Add Funds</a>
                 </li>
                 <li class="nav-item mt-3">
                   <a class="nav-link" href="/support.html">Support</a>
@@ -86,21 +86,21 @@
               <img src="img/cart.png" alt="" height="40px" />
               <p class="m-0 ms-3">Total Orders</p>
             </div>
-            <p id="totalOrder" class="detailstext">785487</p>
+            <p id="totalOrder" class="detailstext">0</p>
           </div>
           <div class="card p-2 bg-light mt-2">
             <div class="topic d-flex align-items-center">
               <img src="img/card.png" alt="" height="40px" />
               <p class="m-0 ms-3">Account Balance</p>
             </div>
-            <p id="totalOrder" class="detailstext">≈ ₹ 548</p>
+            <p id="totalOrder" class="detailstext">≈ ₹ 0</p>
           </div>
           <div class="card p-2 bg-light mt-2">
             <div class="topic d-flex align-items-center">
               <img src="img/status.png" alt="" height="40px" />
               <p class="m-0 ms-3">Account Spendings</p>
             </div>
-            <p id="totalOrder" class="detailstext">₹ 1587</p>
+            <p id="totalOrder" class="detailstext">₹ 0</p>
           </div>
         </div>
 
@@ -108,22 +108,15 @@
           class="d-flex flex-column justify-content-center align-items-center"
         >
           <div class="newOrder card mt-5 bg-light p-3">
-            <div class="category">
+            <div class="category" id="vat">
               <label for="serviceSelect">Category</label>
               <select
-                id="serviceSelect"
+                id="CategorySelect"
                 class="form-select form-select-sm mt-1"
                 aria-label=".form-select-sm example"
               >
-                <option value="935" selected>
-                  ❖ Telegram Chanel Members [ Exclusive Services ]
-                </option>
-                <option value="141564">❖ Telegram Chanel Members</option>
-                <option value="17939">❖ Telegram Post Views [ Stable ]</option>
-                <option value="934">❖ Telegram Post Views</option>
-                <option value="33955">❖ Telegram Reactions</option>
-                <option value="2077">❖ Telegram Future Post Views</option>
-                <option value="17053">❖ Telegram Russia 🇷🇺</option>
+                <option value="select">Select Service</option>
+                <option value="935">Telegram - ( Non Drop ) Members</option>
               </select>
             </div>
             <div class="service mt-3">
@@ -132,58 +125,139 @@
                 id="serviceSelect"
                 class="form-select form-select-sm mt-1"
                 aria-label=".form-select-sm example"
-              >
-                <option value="935" selected>
-                  ❖ Telegram Chanel Members [ Exclusive Services ]
-                </option>
-                <option value="141564">❖ Telegram Chanel Members</option>
-                <option value="17939">❖ Telegram Post Views [ Stable ]</option>
-                <option value="934">❖ Telegram Post Views</option>
-                <option value="33955">❖ Telegram Reactions</option>
-                <option value="2077">❖ Telegram Future Post Views</option>
-                <option value="17053">❖ Telegram Russia 🇷🇺</option>
-              </select>
+              ></select>
             </div>
 
             <div class="serviceDesc mt-4">
               <label for="serviceSelect">Description</label>
-              <div class="panel-body">
-                🕕 Instant <br />⚡ 10k-20k/day<br />💎 HQ, Non Drop<br /><br />⚠️
-                Service Is 100% Non Drop, But In Telegram We Do Not Provide Any
-                Refill Guarantee. Its Just Sold As Non Drop &amp; Working Non
-                Drop From Past 5-6 Months
+              <div class="panel-body" id="desc">
+                <p id="descText" class="d-none">
+                  Non Drop Members <br />
+                  Last Drop Expected ( 1 % ) <br />
+                  No Reffil & No Refund Gurantee<br />
+                  Best Service For Telegram Channels
+                </p>
               </div>
             </div>
 
             <div class="link mt-4">
               <label for="link">Link</label>
-              <input class="form-control" id="linkInput" rows="1" />
+              <input
+                type="text"
+                autocomplete="on"
+                class="form-control"
+                id="linkInput"
+                rows="1"
+              />
             </div>
             <div class="link mt-4">
               <label for="link">Quantity</label>
               <input
-                type="tel"
+                type="number"
                 class="form-control"
                 id="qntInput"
                 min="100"
                 max="5000"
               />
-              <p>Min: 100 - Max: 5000</p>
+              <p>Min: 100 - Max: 20,000</p>
             </div>
             <div class="link mt-3">
               <label for="link">Charge</label>
               <input
-                type="number"
+                type="tel"
                 class="form-control"
-                id="qntInput"
+                id="chrgInput"
+                value=""
                 disabled
               />
             </div>
 
             <div class="bttn mt-3">
-              <button type="button" class="btn btn-secondary">
+              <button
+                type="button"
+                id="PlaceOrder1"
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
                 Place Order
               </button>
+            </div>
+
+            <div
+              class="modal fade"
+              id="staticBackdrop"
+              data-bs-backdrop="static"
+              data-bs-keyboard="false"
+              tabindex="-1"
+              aria-labelledby="staticBackdropLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                      New Order
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="link mt-3">
+                      <label for="link">Service Id</label>
+                      <textarea
+                        type="text"
+                        class="form-control"
+                        id="orderCat"
+                        disabled
+                      >
+                      </textarea>
+                    </div>
+                    <div class="link mt-3">
+                      <label for="link">Service</label>
+                      <textarea class="form-control" id="orderService" disabled>
+                      </textarea>
+                    </div>
+                    <div class="link mt-3">
+                      <label for="link">Link</label>
+                      <textarea class="form-control" id="orderLink" disabled>
+                      </textarea>
+                    </div>
+                    <div class="link mt-3">
+                      <label for="link">Rate</label>
+                      <textarea
+                        class="form-control"
+                        id="orderRate"
+                        disabled
+                      ></textarea>
+                    </div>
+                    <div class="link mt-3">
+                      <label for="link">Charge</label>
+                      <textarea
+                        class="form-control"
+                        id="orderCharge"
+                        disabled
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Place Order
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

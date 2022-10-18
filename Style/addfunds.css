@@ -1,0 +1,39 @@
+.addfund label {
+  color: black;
+  font-weight: 400;
+}
+
+.alert {
+  padding: 2px;
+  background-color: red !important;
+  font-size: 26px;
+}
+
+.intructions p {
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.addfund button {
+  background-color: green;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 6px;
+  width: 100%;
+}
+.paytmBtn button:hover,
+.paytmBtn button:focus {
+  background-color: green;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+@media screen and (min-width: 767px) {
+  .paytm .img-fluid {
+    width: 60%;
+    text-align: center;
+  }
+}

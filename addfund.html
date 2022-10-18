@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Style/Bootstrap/bootstrap.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="Style/style.css" />
+    <link rel="stylesheet" href="Style/homepage.css" />
+    <link rel="stylesheet" href="/Style/addfunds.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="vendor/Bootstrap/bootstrap.min.js"></script>
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/Bootstrap/pooper.min.js"></script>
+    <script src="/vendor/Config/addfund.js"></script>
+  </head>
+  <body>
+    <div class="hero homepageHero">
+      <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+          <div class="container-fluid">
+            <a class="navbar-brand text-center align-items-center" href="/">
+              <img src="img/logo.png" alt="" width="80px" />
+              <div class="name ms-2">
+                <p class="m-0 p-0 boost">BOOST CLUB</p>
+                <hr class="p-0 m-0" />
+                <p class="m-0 p-0 smm">SMM PANEL</p>
+              </div>
+            </a>
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav text-start mt-2">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/homepage.html"
+                    >New Order</a
+                  >
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/services.html">Services</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/trackorder.html">Track Orders</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link active" href="/addfund.html">Add Funds</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/support.html">Support</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/update.html">Updates</a>
+                </li>
+                <li class="nav-item mt-3">
+                  <a class="nav-link" href="/Account.html">Account</a>
+                </li>
+                <li class="nav-item mt-3 mb-5">
+                  <a class="nav-link" id="logout">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="main">
+        <div class="addfund d-flex align-items-center flex-column">
+          <div class="card p-3 mt-4">
+            <div class="Method" id="vat">
+              <label for="CategorySelect">Method</label>
+
+              <select
+                id="CategorySelect"
+                class="form-select form-select-sm mt-1"
+                aria-label=".form-select-sm example"
+              >
+                <option value="paytm" id="SelectPaytm">
+                  Paytm QR (Minimum 100rs)
+                </option>
+                <option value="phonepe" id="SelectPhonepe">
+                  PhonePe Auto [USE PHONEPE ONLY] Min 50rs
+                </option>
+                <option value="gpay" id="SelectGpay">
+                  Gpay [USE GPAY ONLY] Min 50rs
+                </option>
+              </select>
+            </div>
+            <div class="paytm mt-3" id="paytm">
+              <div>
+                <label for="PaytmorderId">Order Id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="PaytmorderId"
+                  min="100"
+                />
+              </div>
+              <div class="mt-2">
+                <label for="PaytmorderAmount">Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="PaytmorderAmount"
+                  min="100"
+                />
+              </div>
+
+              <p class="bg-danger text-center mt-3 alert">
+                Always Scan Latest QR Code
+              </p>
+              <div class="img d-flex justify-content-center">
+                <img src="/img/paytm.jpg" class="img-fluid p-4" alt="paytm"">
+              </div>
+              <div class="intructions text-center">
+                <p>
+                  <span style="font-weight: 500; color: rgb(255, 136, 0)"
+                    >INSTRUCTIONS :-</span
+                  ><br />
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >1- Scan the QR code and make Payment.</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >2- Enter order ID and Amount below.</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >3-Wait some time and your funds would be added.</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >4-If the QR Scan is not working in Paytm Then Pay Using
+                      PhonePe.</font
+                    ></span
+                  >
+                </p>
+
+                <p>
+                  <span style="background-color: rgb(255, 255, 0)"
+                    ><span style="font-weight: 700"
+                      ><font color="#010101"
+                        ><i>Important note - 1-</i></font
+                      ></span
+                    ><span style="font-weight: 700"
+                      ><font color="#010101"
+                        ><i
+                          >Enter full order id always. If payment is made from
+                          phone pe then enter order id with the letter.</i
+                        ></font
+                      ></span
+                    ></span
+                  >
+                </p>
+              </div>
+
+              <div class="d-flex justify-content-center mt-3">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-success w-100"
+                  id="paytmBtn"
+                >
+                  Check
+                </button>
+              </div>
+            </div>
+
+            <!-- phone pe -->
+            <div class="phonepe mt-3 d-none" id="phonepe">
+              <div>
+                <label for="phonePeId">Transection Id</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phonePeId"
+                  min="100"
+                />
+              </div>
+
+              <p class="bg-danger text-center mt-3 alert">
+                Always Scan Latest QR Code
+              </p>
+              <div class="img d-flex justify-content-center">
+                <img src="/img/ppay.jpg" class="img-fluid p-4" alt="paytm"">
+              </div>
+
+              <div class="mt-2">
+                <label for="phonePeAmount">Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="phonePeAmount"
+                  min="100"
+                />
+              </div>
+              <div class="intructions text-center mt-3">
+                <p>
+                  <span style="font-weight: 500; color: rgb(255, 136, 0)"
+                    >INSTRUCTIONS :-</span
+                  ><br />
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >1. Pay Using PhonePe App Only</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >2- Enter Transection Id and Amount .</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >3-Wait some time and your funds would be added.</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >4-Minimum Amount Rs. 50 /-</font
+                    ></span
+                  >
+                </p>
+              </div>
+
+              <div class="d-flex justify-content-center mt-3">
+                <button
+                  type="button"
+                  id="phonePayBtn"
+                  class="btn btn-sm btn-success w-100"
+                >
+                  Pay
+                </button>
+              </div>
+            </div>
+
+            <!-- Gpay -->
+            <div class="gpay mt-3 d-none" id="gpay">
+              <div>
+                <label for="gpayId">GoogleTransection Id</label>
+                <input type="text" class="form-control" id="gpayId" min="100" />
+              </div>
+
+              <p class="bg-danger text-center mt-3 alert">
+                Always Scan Latest QR Code
+              </p>
+              <div class="img d-flex justify-content-center">
+                <img src="/img/gpay.jpg" class="img-fluid p-4" alt="paytm"">
+              </div>
+
+              <div class="mt-2">
+                <label for="phonePeAmount">Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="phonePeAmount"
+                  min="100"
+                />
+              </div>
+              <div class="intructions text-center mt-3">
+                <p>
+                  <span style="font-weight: 500; color: rgb(255, 136, 0)"
+                    >INSTRUCTIONS :-</span
+                  ><br />
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >1. Pay Using GPAY App Only</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >2- Enter Google Transection Id and Amount .</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101">
+                      3-Wait some time and your funds would be added.</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101"
+                      >4-Minimum Amount Rs. 50 /-</font
+                    ></span
+                  >
+                </p>
+              </div>
+
+              <div class="paytmBtn d-flex justify-content-center mt-3">
+                \
+                <button
+                  type="button"
+                  id="gpayBtn"
+                  class="btn btn-sm btn-success w-100"
+                >
+                  Pay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="contactFooter">
+        <p>© 2022 Smmboostclub.com All Rights Reserved</p>
+        <p>
+          Design And Developed By
+          <a href="https://theb0se.com/" target="_blank">Rishabh Bose</a>
+        </p>
+      </footer>
+    </div>
+    <div id="landing-mobile-background">
+      <img
+        id="heart-s-1"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+      <img
+        id="heart-s-2"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+      <img
+        id="heart-s-3"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-5p2.png"
+      />
+
+      <img
+        id="heart-b-1"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-2"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-3"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+      <img
+        id="heart-b-4"
+        class="landing-mobile-background"
+        title="Hearts"
+        alt="Hearts"
+        src="img/mobile-heart-10p.png"
+      />
+    </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/+919516945996"
+        ><img src="img/whatsapp.png" alt="whatspp" width="50px" height="50px"
+      /></a>
+    </div>
+    <div class="telegram">
+      <a href="https://t.me/+aMXCGa6ei8NkMDM1 "
+        ><img src="img/telegram.png" alt="whatspp" width="50px" height="50px"
+      /></a>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        const item = localStorage.getItem("user");
+        if (!item) {
+          window.location = "/";
+        }
+
+        $("#logout").click(function () {
+          localStorage.removeItem("user");
+          window.location = "/";
+        });
+      });
+    </script>
+  </body>
+</html>

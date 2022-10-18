@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="Style/homepage.css" />
     <link rel="stylesheet" href="Style/Account.css" />
     <link rel="stylesheet" href="Style/support.css" />
+    <link rel="stylesheet" href="Style/overflow.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="vendor/Bootstrap/bootstrap.min.js"></script>
@@ -49,7 +50,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav text-start mt-2">
-                <li class="nav-item">
+                <li class="nav-item mt-3">
                   <a class="nav-link" aria-current="page" href="/homepage.html"
                     >New Order</a
                   >
@@ -58,13 +59,15 @@
                   <a class="nav-link" href="/services.html">Services</a>
                 </li>
                 <li class="nav-item mt-3">
-                  <a class="nav-link" href="/trackorder.html">Track Orders</a>
+                  <a class="nav-link active" href="/trackorder.html"
+                    >Track Orders</a
+                  >
                 </li>
                 <li class="nav-item mt-3">
                   <a class="nav-link" href="/addfund.html">Add Funds</a>
                 </li>
                 <li class="nav-item mt-3">
-                  <a class="nav-link active" href="/support.html">Support</a>
+                  <a class="nav-link" href="/support.html">Support</a>
                 </li>
                 <li class="nav-item mt-3">
                   <a class="nav-link" href="/update.html">Updates</a>
@@ -81,67 +84,38 @@
         </nav>
       </div>
       <div class="main acountDetails">
-        <div class="support flex-column">
+        <div class="trackorder flex-column">
           <div class="card mt-4 p-3">
-            <form method="post">
-              <div class="subject mt-3">
-                <label for="subject">Subject</label>
-                <input class="form-control" type="text" id="subject" />
-              </div>
-              <div class="message mt-4">
-                <label for="magtextarea">Message</label>
-                <textarea
-                  class="form-control"
-                  id="magtextarea"
-                  rows="3"
-                ></textarea>
-              </div>
-              <div class="mt-4">
-                <label for="formFileSm" class="form-label"
-                  >Choose Image (Optional)</label
-                >
-                <input
-                  class="form-control form-control-sm"
-                  id="formFileSm"
-                  type="file"
-                />
-              </div>
-
-              <button
-                type="button"
-                class="btn emailChangeButton btn-primary d-flex align-items-center justify-content-center mt-4"
-                id="updateEmailBtn"
-              >
-                Submit Ticket
-                <div
-                  class="spinner-border text-danger spinner-border-sm d-none ms-3"
-                  role="status"
-                  id="spinner"
-                >
-                  <span class="sr-only">Loading...</span>
-                </div>
-              </button>
-            </form>
-          </div>
-          <div class="card mt-4 p-3">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Ticket Id</th>
-                  <th scope="col">Subject</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Last Update</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row" id="ticketId"> </th>
-                  <td id="subject"> </td>
-                  <td id="status"> </td>
-                  <td id="last Update"> </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Charge</th>
+                    <th scope="col">Start Count</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Remains</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" id="ticketId"></th>
+                    <td id="subject"></td>
+                    <td id="status"></td>
+                    <td id="last Update"></td>
+                    <th scope="row" id="ticketId"></th>
+                    <td id="subject"></td>
+                    <td id="status"></td>
+                    <td id="last Update"></td>
+                    <td id="last Update"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

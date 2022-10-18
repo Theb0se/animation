@@ -1,6 +1,5 @@
 window.onload = function () {
   const signUpBtn = document.getElementById("signUpBtn");
-  const toastLiveExample = document.getElementById("liveToast");
 
   const signUp = (e) => {
     const username = document.getElementById("name").value;

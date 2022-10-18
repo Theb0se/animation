@@ -74,3 +74,11 @@
     width: 600px !important;
   }
 }
+
+.modal-backdrop {
+  --bs-backdrop-zindex: 10;
+}
+
+.modal-title{
+  color: #000;
+}
