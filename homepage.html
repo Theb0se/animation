@@ -47,7 +47,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav text-start mt-2">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/homepage.html"
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/homepage.html"
                     >New Order</a
                   >
                 </li>
@@ -58,7 +61,7 @@
                   <a class="nav-link" href="/trackorder.html">Track Orders</a>
                 </li>
                 <li class="nav-item mt-3">
-                  <a class="nav-link " href="/addfund.html">Add Funds</a>
+                  <a class="nav-link" href="/addfund.html">Add Funds</a>
                 </li>
                 <li class="nav-item mt-3">
                   <a class="nav-link" href="/support.html">Support</a>
@@ -207,6 +210,9 @@
                     ></button>
                   </div>
                   <div class="modal-body">
+                    <div class="LogingMsgContainer" id="loginMsgContainer">
+                      <div class="loginMsg text-center p-2" id="signMsg"></div>
+                    </div>
                     <div class="link mt-3">
                       <label for="link">Service Id</label>
                       <textarea
@@ -224,24 +230,15 @@
                     </div>
                     <div class="link mt-3">
                       <label for="link">Link</label>
-                      <textarea class="form-control" id="orderLink" disabled>
-                      </textarea>
+                      <input class="form-control" id="orderLink" disabled />
                     </div>
                     <div class="link mt-3">
                       <label for="link">Rate</label>
-                      <textarea
-                        class="form-control"
-                        id="orderRate"
-                        disabled
-                      ></textarea>
+                      <input class="form-control" id="orderRate" disabled />
                     </div>
                     <div class="link mt-3">
                       <label for="link">Charge</label>
-                      <textarea
-                        class="form-control"
-                        id="orderCharge"
-                        disabled
-                      ></textarea>
+                      <input class="form-control" id="orderCharge" disabled />
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -252,8 +249,19 @@
                     >
                       Close
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="PlaceOrder2"
+                    >
                       Place Order
+                      <div
+                        class="spinner-border text-danger spinner-border-sm d-none ms-3"
+                        role="status"
+                        id="spinner"
+                      >
+                        <span class="sr-only">Loading...</span>
+                      </div>
                     </button>
                   </div>
                 </div>

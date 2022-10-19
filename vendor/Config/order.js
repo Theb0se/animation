@@ -1,6 +1,6 @@
 window.onload = function () {
   const services = {
-    key: "826ff10d7a4c0ab143d64e59628cdaa3",
+    key: "8eac711290c821166246944b29bf1f62",
     action: "services",
   };
 
@@ -40,5 +40,42 @@ window.onload = function () {
     $("#orderLink").val($("#linkInput").val());
     $("#orderRate").val($("#qntInput").val());
     $("#orderCharge").val($("#chrgInput").val());
+  });
+
+  // post new order
+  const availServices = JSON.parse(localStorage.getItem("services"))[0];
+
+  $("#PlaceOrder2").click(function () {
+    $("#loginMsgContainer").hide();
+    $("#spinner").removeClass("d-none");
+    const link = $("#linkInput").val();
+    const quantity = $("#qntInput").val();
+
+    const newOrder = {
+      key: "8eac711290c821166246944b29bf1f62",
+      action: "add",
+      service: availServices.service,
+      link: link,
+      quantity: quantity,
+    };
+
+    axios
+      .post("https://smmboostclub.herokuapp.com/neworder", newOrder)
+      .then(function (response) {
+        console.log(response.data);
+        const msg = response.data;
+        $("#signMsg").text(msg.error ? msg.error : msg.order);
+        $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
+        $("#loginMsgContainer").show();
+        $("#spinner").addClass("d-none");
+      })
+      .catch(function (error) {
+        console.log(error);
+        const errnsg = JSON.stringify(error);
+        $("#signMsg").text(errnsg);
+        $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
+        $("#spinner").addClass("d-none");
+        $("#loginMsgContainer").show();
+      });
   });
 };
