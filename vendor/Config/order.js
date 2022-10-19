@@ -62,7 +62,6 @@ window.onload = function () {
     axios
       .post("https://smmboostclub.herokuapp.com/neworder", newOrder)
       .then(function (response) {
-        console.log(response.data);
         const msg = response.data;
         $("#signMsg").text(msg.error ? msg.error : msg.order);
         $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
@@ -70,7 +69,6 @@ window.onload = function () {
         $("#spinner").addClass("d-none");
       })
       .catch(function (error) {
-        console.log(error);
         const errnsg = JSON.stringify(error);
         $("#signMsg").text(errnsg);
         $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
