@@ -13,10 +13,14 @@
   align-items: center;
   justify-content: center;
 }
-.trackorder .card{
+.trackorder .card {
   width: 100% !important;
 }
 
 .trackorder .table {
-    width: 1400px;
+  width: 1400px;
+}
+
+.supportMain .table {
+  width: 500px;
 }

@@ -10,6 +10,6 @@ window.onload = function () {
   $("#rate").text(rate);
   $("#min").text(services[0].min);
   $("#max").text(services[0].max);
-  $("#time").text("Not enough Data");
+  $("#time").text("1 - Hour");
   $("#description");
 };

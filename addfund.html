@@ -91,13 +91,13 @@
                 aria-label=".form-select-sm example"
               >
                 <option value="paytm" id="SelectPaytm">
-                  Paytm QR (Minimum 100rs)
+                  Paytm QR ( Minimum 100 ₹ )
                 </option>
                 <option value="phonepe" id="SelectPhonepe">
-                  PhonePe Auto [USE PHONEPE ONLY] Min 50rs
+                  PhonePe Auto [USE PHONEPE ONLY] Min 50 ₹
                 </option>
                 <option value="gpay" id="SelectGpay">
-                  Gpay [USE GPAY ONLY] Min 50rs
+                  Gpay [USE GPAY ONLY] Min 50 ₹
                 </option>
               </select>
             </div>
@@ -120,9 +120,18 @@
                   min="100"
                 />
               </div>
+              <div class="d-flex justify-content-center mt-4">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-success w-100"
+                  id="paytmBtn"
+                >
+                  Check
+                </button>
+              </div>
 
-              <p class="bg-danger text-center mt-3 alert">
-                Always Scan Latest QR Code
+              <p class="noteImp text-center mt-4 alert">
+                Warning - Always Scan Latest QR Code
               </p>
               <div class="img d-flex justify-content-center">
                 <img src="/img/paytm.jpg" class="img-fluid p-4" alt="paytm"">
@@ -136,29 +145,29 @@
                 <p>
                   <span style="font-weight: 500"
                     ><font color="#010101"
-                      >1- Scan the QR code and make Payment.</font
+                      >• Scan The QR Code & Make Payment .</font
                     ></span
                   >
                 </p>
                 <p>
                   <span style="font-weight: 500"
                     ><font color="#010101"
-                      >2- Enter order ID and Amount below.</font
+                      >• Enter Order ID & Amount Below .</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101">
+                      • Wait Some Time & Your Funds Would Be Added .</font
                     ></span
                   >
                 </p>
                 <p>
                   <span style="font-weight: 500"
                     ><font color="#010101"
-                      >3-Wait some time and your funds would be added.</font
-                    ></span
-                  >
-                </p>
-                <p>
-                  <span style="font-weight: 500"
-                    ><font color="#010101"
-                      >4-If the QR Scan is not working in Paytm Then Pay Using
-                      PhonePe.</font
+                      >• If The QR Scan Is Not Working In Paytm Then Use (
+                      PhonePe & Gpay ) .</font
                     ></span
                   >
                 </p>
@@ -172,23 +181,14 @@
                     ><span style="font-weight: 700"
                       ><font color="#010101"
                         ><i
-                          >Enter full order id always. If payment is made from
-                          phone pe then enter order id with the letter.</i
+                          >IMPORTANT NOTE - Please Using Latest QR Code Before
+                          Paying , Otherwise Your Payment Will Not Be Accepted
+                          .</i
                         ></font
                       ></span
                     ></span
                   >
                 </p>
-              </div>
-
-              <div class="d-flex justify-content-center mt-3">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-success w-100"
-                  id="paytmBtn"
-                >
-                  Check
-                </button>
               </div>
             </div>
 

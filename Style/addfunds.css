@@ -5,8 +5,8 @@
 
 .alert {
   padding: 2px;
-  background-color: red !important;
-  font-size: 26px;
+  background-color: rgba(252, 64, 64, 0.705) !important;
+  font-size: 20px;
 }
 
 .intructions p {
