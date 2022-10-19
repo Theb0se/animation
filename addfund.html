@@ -94,10 +94,10 @@
                   Paytm QR ( Minimum 100 ₹ )
                 </option>
                 <option value="phonepe" id="SelectPhonepe">
-                  PhonePe Auto [USE PHONEPE ONLY] Min 50 ₹
+                  PhonePe QR ( Minimum 100 ₹ )
                 </option>
                 <option value="gpay" id="SelectGpay">
-                  Gpay [USE GPAY ONLY] Min 50 ₹
+                  Gpay QR ( Minimum 100 ₹ )
                 </option>
               </select>
             </div>
@@ -199,14 +199,6 @@
                   min="100"
                 />
               </div>
-
-              <p class="bg-danger text-center mt-3 alert">
-                Always Scan Latest QR Code
-              </p>
-              <div class="img d-flex justify-content-center">
-                <img src="/img/ppay.jpg" class="img-fluid p-4" alt="paytm"">
-              </div>
-
               <div class="mt-2">
                 <label for="phonePeAmount">Amount</label>
                 <input
@@ -216,7 +208,24 @@
                   min="100"
                 />
               </div>
-              <div class="intructions text-center mt-3">
+              <div class="d-flex justify-content-center mt-4">
+                <button
+                  type="button"
+                  id="phonePayBtn"
+                  class="btn btn-sm btn-success w-100"
+                >
+                  Check
+                </button>
+              </div>
+
+              <p class="bg-danger text-center mt-3 alert">
+                Warning - Always Scan Latest QR Code
+              </p>
+              <div class="img d-flex justify-content-center">
+                <img src="/img/ppay.jpg" class="img-fluid p-4" alt="paytm"">
+              </div>
+
+              <div class="intructions text-center">
                 <p>
                   <span style="font-weight: 500; color: rgb(255, 136, 0)"
                     >INSTRUCTIONS :-</span
@@ -225,67 +234,81 @@
                 <p>
                   <span style="font-weight: 500"
                     ><font color="#010101"
-                      >1. Pay Using PhonePe App Only</font
+                      >• Scan The QR Code & Make Payment .</font
                     ></span
                   >
                 </p>
                 <p>
                   <span style="font-weight: 500"
                     ><font color="#010101"
-                      >2- Enter Transection Id and Amount .</font
+                      >• Enter Order ID & Amount Below .</font
+                    ></span
+                  >
+                </p>
+                <p>
+                  <span style="font-weight: 500"
+                    ><font color="#010101">
+                      • Wait Some Time & Your Funds Would Be Added .</font
                     ></span
                   >
                 </p>
                 <p>
                   <span style="font-weight: 500"
                     ><font color="#010101"
-                      >3-Wait some time and your funds would be added.</font
+                      >• If The QR Scan Is Not Working In PhonePe Then Use (
+                      Paytm & Gpay ) .</font
                     ></span
                   >
                 </p>
-                <p>
-                  <span style="font-weight: 500"
-                    ><font color="#010101"
-                      >4-Minimum Amount Rs. 50 /-</font
-                    ></span
-                  >
-                </p>
-              </div>
 
-              <div class="d-flex justify-content-center mt-3">
-                <button
-                  type="button"
-                  id="phonePayBtn"
-                  class="btn btn-sm btn-success w-100"
-                >
-                  Pay
-                </button>
+                <p>
+                  <span style="background-color: rgb(255, 255, 0)"
+                    ><span style="font-weight: 700"
+                      ><font color="#010101"
+                        ><i
+                          >IMPORTANT NOTE - Please Using Latest QR Code Before
+                          Paying , Otherwise Your Payment Will Not Be Accepted
+                          .</i
+                        ></font
+                      ></span
+                    ></span
+                  >
+                </p>
               </div>
             </div>
 
             <!-- Gpay -->
             <div class="gpay mt-3 d-none" id="gpay">
               <div>
-                <label for="gpayId">GoogleTransection Id</label>
+                <label for="gpayId">UPI Transection Id</label>
                 <input type="text" class="form-control" id="gpayId" min="100" />
               </div>
+              <div class="mt-2">
+                <label for="gpayAmount">Amount</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="gpayAmount"
+                  min="100"
+                />
+              </div>
+              <div class="paytmBtn d-flex justify-content-center mt-4">
+                <button
+                  type="button"
+                  id="gpayBtn"
+                  class="btn btn-sm btn-success w-100"
+                >
+                  Check
+                </button>
+              </div>
 
-              <p class="bg-danger text-center mt-3 alert">
+              <p class="bg-danger text-center mt-4 alert">
                 Always Scan Latest QR Code
               </p>
               <div class="img d-flex justify-content-center">
                 <img src="/img/gpay.jpg" class="img-fluid p-4" alt="paytm"">
               </div>
 
-              <div class="mt-2">
-                <label for="phonePeAmount">Amount</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="phonePeAmount"
-                  min="100"
-                />
-              </div>
               <div class="intructions text-center mt-3">
                 <p>
                   <span style="font-weight: 500; color: rgb(255, 136, 0)"
@@ -320,17 +343,6 @@
                     ></span
                   >
                 </p>
-              </div>
-
-              <div class="paytmBtn d-flex justify-content-center mt-3">
-                \
-                <button
-                  type="button"
-                  id="gpayBtn"
-                  class="btn btn-sm btn-success w-100"
-                >
-                  Pay
-                </button>
               </div>
             </div>
           </div>
