@@ -3,39 +3,6 @@ window.onload = function () {
   const data = {
     userId: user.id,
   };
-  const arryOrder = JSON.parse(localStorage.getItem("orders"));
-  const showdata = () => {
-    arryOrder.forEach((orders) => {
-      console.log(orders.charge);
-      const d = new Date(orders.ordermain.updatedAt);
-      const charge = Math.floor(orders.ordermain.quantity * 0.12);
-      var data =
-        "<tr> <td id=id>" +
-        charge +
-        "</td> <td id=date>" +
-        d +
-        "</td> <td id=link>" +
-        orders.ordermain.link +
-        "</td> <td id=charge>" +
-        charge +
-        " ₹" +
-        "</td> <td id=count>" +
-        orders.start_count +
-        "</td> <td id=quantity>" +
-        orders.ordermain.quantity +
-        "</td> <td id=service>" +
-        orders.ordermain.service +
-        "</td> <td id=status>" +
-        orders.status +
-        "</td><td id=remain>" +
-        orders.remains +
-        "</td> </tr>";
-
-      $("#tbody").append(data);
-    });
-  };
-
-  showdata();
 
   axios
     .post("https://smmboostclub.herokuapp.com/order/getOrder", data)
@@ -56,6 +23,34 @@ window.onload = function () {
       const strOrders = JSON.stringify(arr);
       localStorage.setItem("orders", strOrders);
       $("#loading").hide();
+      arr.forEach((orders) => {
+        console.log(orders.charge);
+        const d = new Date(orders.ordermain.updatedAt);
+        const charge = Math.floor(orders.ordermain.quantity * 0.12);
+        var data =
+          "<tr> <td id=id>" +
+          charge +
+          "</td> <td id=date>" +
+          d +
+          "</td> <td id=link>" +
+          orders.ordermain.link +
+          "</td> <td id=charge>" +
+          charge +
+          " ₹" +
+          "</td> <td id=count>" +
+          orders.start_count +
+          "</td> <td id=quantity>" +
+          orders.ordermain.quantity +
+          "</td> <td id=service>" +
+          orders.ordermain.service +
+          "</td> <td id=status>" +
+          orders.status +
+          "</td><td id=remain>" +
+          orders.remains +
+          "</td> </tr>";
+
+        $("#tbody").append(data);
+      });
     })
     .catch(function (error) {
       const errmsg = JSON.stringify(error);

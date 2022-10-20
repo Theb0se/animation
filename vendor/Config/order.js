@@ -4,10 +4,6 @@ window.onload = function () {
     action: "services",
   };
 
-  const user = JSON.parse(localStorage.getItem("user"));
-  const allOrder = JSON.parse(localStorage.getItem("allorder"));
-  $("#totalOrder").text(allOrder.length);
-
   axios
     .post("https://smmboostclub.herokuapp.com/", services)
     .then(function (response) {
@@ -15,6 +11,7 @@ window.onload = function () {
       const services = data.filter((d) => {
         return d.service.match("1983");
       });
+      console.log(services);
       const servicesData = JSON.stringify(services);
       localStorage.setItem("services", servicesData);
     })
@@ -77,6 +74,7 @@ window.onload = function () {
         $("#spinner").addClass("d-none");
 
         // post order
+        const user = JSON.parse(localStorage.getItem("user"));
 
         if (msg.order) {
           const orderData = {
@@ -124,4 +122,7 @@ window.onload = function () {
       $("#spinner").addClass("d-none");
       $("#loginMsgContainer").show();
     });
+
+  const allOrder = JSON.parse(localStorage.getItem("allorder"));
+  $("#totalOrder").text(allOrder.length);
 };
