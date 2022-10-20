@@ -117,10 +117,6 @@ window.onload = function () {
 
     .catch(function (error) {
       const errnsg = JSON.stringify(error);
-      $("#signMsg").text(errnsg);
-      $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
-      $("#spinner").addClass("d-none");
-      $("#loginMsgContainer").show();
     });
 
   const allOrder = JSON.parse(localStorage.getItem("allorder"));
