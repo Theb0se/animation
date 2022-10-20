@@ -86,6 +86,13 @@
         >
           <div class="card p-2 bg-light mt-5">
             <div class="topic d-flex align-items-center">
+              <img src="img/members.png" alt="" height="40px" />
+              <p class="m-0 ms-3">BOOST CLUB Order</p>
+            </div>
+            <p id="totalMembers" class="detailstext">8</p>
+          </div>
+          <div class="card p-2 bg-light mt-2">
+            <div class="topic d-flex align-items-center">
               <img src="img/cart.png" alt="" height="40px" />
               <p class="m-0 ms-3">Total Orders</p>
             </div>
@@ -111,7 +118,26 @@
           class="d-flex flex-column justify-content-center align-items-center"
         >
           <div class="newOrder card mt-5 bg-light p-3">
-            <div class="category" id="vat">
+            <div class="LogingMsgContainer" id="loginMsgContainer">
+              <div class="loginMsg text-center p-2" id="signMsg">
+                <div class="head d-flex justify-content-between mb-0">
+                  <p>Your Order Recevied</p>
+                  <p id="close" style="font-size: 11px; font-weight: 600">Χ</p>
+                </div>
+                <div class="orderdt text-start">
+                  <p id="orderId"></p>
+                  <p id="service">
+                    Service - Telegram Members { Non Drop } ( 10 / Day ) ( Max -
+                    20K ) | Instant Start | Best Working - ₹ 120 Per 1000
+                  </p>
+                  <p id="link"></p>
+                  <p id="quantity"></p>
+                  <p id="charge"></p>
+                  <p id="balence"></p>
+                </div>
+              </div>
+            </div>
+            <div class="category mt-2" id="vat">
               <label for="serviceSelect">Category</label>
               <select
                 id="CategorySelect"
@@ -176,96 +202,16 @@
             </div>
 
             <div class="bttn mt-3">
-              <button
-                type="button"
-                id="PlaceOrder1"
-                class="btn btn-secondary"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
-              >
+              <button type="button" class="btn btn-primary" id="PlaceOrder">
                 Place Order
-              </button>
-            </div>
-
-            <div
-              class="modal fade"
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                      New Order
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="LogingMsgContainer" id="loginMsgContainer">
-                      <div class="loginMsg text-center p-2" id="signMsg"></div>
-                    </div>
-                    <div class="link mt-3">
-                      <label for="link">Service Id</label>
-                      <textarea
-                        type="text"
-                        class="form-control"
-                        id="orderCat"
-                        disabled
-                      >
-                      </textarea>
-                    </div>
-                    <div class="link mt-3">
-                      <label for="link">Service</label>
-                      <textarea class="form-control" id="orderService" disabled>
-                      </textarea>
-                    </div>
-                    <div class="link mt-3">
-                      <label for="link">Link</label>
-                      <input class="form-control" id="orderLink" disabled />
-                    </div>
-                    <div class="link mt-3">
-                      <label for="link">Rate</label>
-                      <input class="form-control" id="orderRate" disabled />
-                    </div>
-                    <div class="link mt-3">
-                      <label for="link">Charge</label>
-                      <input class="form-control" id="orderCharge" disabled />
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      id="PlaceOrder2"
-                    >
-                      Place Order
-                      <div
-                        class="spinner-border text-danger spinner-border-sm d-none ms-3"
-                        role="status"
-                        id="spinner"
-                      >
-                        <span class="sr-only">Loading...</span>
-                      </div>
-                    </button>
-                  </div>
+                <div
+                  class="spinner-border text-danger spinner-border-sm d-none ms-3"
+                  role="status"
+                  id="spinner"
+                >
+                  <span class="sr-only">Loading...</span>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>

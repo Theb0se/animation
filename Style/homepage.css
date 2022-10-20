@@ -55,11 +55,24 @@
   border: 2px solid #000;
 }
 
-.loginMsg{
-  color: #000;
+.loginMsg {
+  color: rgb(15, 15, 15);
   font-size: 18px;
   border-radius: 6px;
 }
+.loginMsg .head {
+  font-size: 16px;
+}
+
+.loginMsg .orderdt p{
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+/* .newOrder .LogingMsgContainer{
+  display: block !important;
+  background-color: rgba(49, 248, 42, 0.651); 
+} */
 
 @media screen and (max-width: 420px) {
   .userDetails .topic p {
@@ -85,6 +98,6 @@
   --bs-backdrop-zindex: 10;
 }
 
-.modal-title{
+.modal-title {
   color: #000;
 }

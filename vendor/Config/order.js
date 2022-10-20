@@ -33,24 +33,19 @@ window.onload = function () {
     $("#chrgInput").val("₹ " + $("#qntInput").val() * 0.12);
   });
 
-  $("#PlaceOrder1").click(function () {
-    $("#orderCat").val("Telegram - ( Non Drop ) Members");
-    $("#orderService").val(
-      "1 - Telegram Members { Non Drop } ( 10 / Day ) ( Max - 20K ) | Instant Start | Best Working - ₹ 120 Per 1000"
-    );
-    $("#orderLink").val($("#linkInput").val());
-    $("#orderRate").val($("#qntInput").val());
-    $("#orderCharge").val($("#chrgInput").val());
-  });
-
   // post new order
   const availServices = JSON.parse(localStorage.getItem("services"))[0];
 
-  $("#PlaceOrder2").click(function () {
+  $("#close").click(function () {
+    $("#loginMsgContainer").hide();
+  });
+
+  $("#PlaceOrder").click(function () {
     $("#loginMsgContainer").hide();
     $("#spinner").removeClass("d-none");
     const link = $("#linkInput").val();
     const quantity = $("#qntInput").val();
+    const charge = $("#chrgInput").val();
 
     const newOrder = {
       key: "8eac711290c821166246944b29bf1f62",
@@ -64,14 +59,17 @@ window.onload = function () {
       .post("https://smmboostclub.herokuapp.com/neworder", newOrder)
       .then(function (response) {
         const msg = response.data;
-        $("#signMsg").text(
-          msg.error
-            ? msg.error
-            : `Order Successfull. Your Order Id is: ${msg.order}`
-        );
-        $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
-        $("#loginMsgContainer").show();
-        $("#spinner").addClass("d-none");
+        if (msg.order) {
+          $("#orderId").text(`ID : ${msg.order}`);
+          $("#link").text(`Link : ${link}`);
+          $("#quantity").text(`Quantity : ${quantity}`);
+          $("#charge").text(`Charge : ${charge}`);
+          $("#balence").text(`Balence : 0`);
+          $("#signMsg").css("background-color", "rgba(49, 248, 42, 0.651");
+          $("#loginMsgContainer").show();
+          $("#spinner").addClass("d-none");
+        } else {
+        }
 
         // post order
         const user = JSON.parse(localStorage.getItem("user"));
