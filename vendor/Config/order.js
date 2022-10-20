@@ -4,6 +4,10 @@ window.onload = function () {
     action: "services",
   };
 
+  const user = JSON.parse(localStorage.getItem("user"));
+  const allOrder = JSON.parse(localStorage.getItem("allorder"));
+  $("#totalOrder").text(allOrder.length);
+
   axios
     .post("https://smmboostclub.herokuapp.com/", services)
     .then(function (response) {
@@ -63,17 +67,61 @@ window.onload = function () {
       .post("https://smmboostclub.herokuapp.com/neworder", newOrder)
       .then(function (response) {
         const msg = response.data;
-        $("#signMsg").text(msg.error ? msg.error : msg.order);
+        $("#signMsg").text(
+          msg.error
+            ? msg.error
+            : `Order Successfull. Your Order Id is: ${msg.order}`
+        );
         $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
         $("#loginMsgContainer").show();
         $("#spinner").addClass("d-none");
-      })
-      .catch(function (error) {
-        const errnsg = JSON.stringify(error);
-        $("#signMsg").text(errnsg);
-        $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
-        $("#spinner").addClass("d-none");
-        $("#loginMsgContainer").show();
+
+        // post order
+
+        if (msg.order) {
+          const orderData = {
+            orderNumber: msg.order,
+            userId: user.id,
+            service:
+              "1 - Telegram Members { Non Drop } ( 10 / Day ) ( Max - 20K ) | Instant Start | Best Working - ₹ 120 Per 1000",
+            link: link,
+            quantity: quantity,
+          };
+
+          axios
+            .post(
+              "https://smmboostclub.herokuapp.com/order/postOrder",
+              orderData
+            )
+            .then(function (response) {
+              const msg = response.data;
+              console.log(msg);
+            })
+            .catch(function (error) {
+              const errmsg = JSON.stringify(error);
+              console.log(errmsg);
+            });
+        }
       });
+
+    // get all order
   });
+  axios
+    .get("https://smmboostclub.herokuapp.com/order/getallorder")
+    .then(function (response) {
+      console.log(response.data);
+      const allOrder = JSON.stringify(response.data);
+      localStorage.setItem("allorder", allOrder);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
+    .catch(function (error) {
+      const errnsg = JSON.stringify(error);
+      $("#signMsg").text(errnsg);
+      $("#signMsg").css("background-color", "rgba(252, 64, 64, 0.568)");
+      $("#spinner").addClass("d-none");
+      $("#loginMsgContainer").show();
+    });
 };

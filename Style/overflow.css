@@ -1,3 +1,17 @@
-body{
-    overflow: auto;
+body {
+  overflow: auto;
+}
+
+.trackorder .table thead {
+  white-space: nowrap;
+  text-align: left;
+}
+.trackorder .table thead tr th {
+  font-weight: 400;
+  padding: 10px 15px;
+}
+.trackorder .table tbody tr td {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px 15px;
 }
