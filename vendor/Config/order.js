@@ -42,6 +42,7 @@ window.onload = function () {
 
   $("#PlaceOrder").click(function () {
     $("#loginMsgContainer").hide();
+    $("#orderCnf").addClass("d-none");
     $("#spinner").removeClass("d-none");
     const link = $("#linkInput").val();
     const quantity = $("#qntInput").val();
@@ -56,7 +57,7 @@ window.onload = function () {
     };
 
     axios
-      .post("https://smmboostclub.herokuapp.com//neworder", newOrder)
+      .post("https://smmboostclub.herokuapp.com/neworder", newOrder)
       .then(function (response) {
         const msg = response.data;
         if (msg.order) {
@@ -68,6 +69,8 @@ window.onload = function () {
           $("#signMsg").css("background-color", "rgba(49, 248, 42, 0.651");
           $("#loginMsgContainer").show();
           $("#spinner").addClass("d-none");
+          $("#orderCnf").css("background-color", "rgba(49, 248, 42, 0.651");
+          $("#orderCnf").removeClass("d-none");
         } else {
           alert(msg.error);
           $("#spinner").addClass("d-none");

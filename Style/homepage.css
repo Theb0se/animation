@@ -60,6 +60,11 @@
   font-size: 18px;
   border-radius: 6px;
 }
+.orderCnf {
+  color: rgb(15, 15, 15);
+  font-size: 15px;
+  border-radius: 6px;
+}
 .loginMsg .head {
   font-size: 16px;
 }
