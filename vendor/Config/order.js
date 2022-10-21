@@ -56,7 +56,7 @@ window.onload = function () {
     };
 
     axios
-      .post("https://smmboostclub.herokuapp.com/neworder", newOrder)
+      .post("http://localhost:3000/neworder", newOrder)
       .then(function (response) {
         const msg = response.data;
         if (msg.order) {
@@ -69,6 +69,8 @@ window.onload = function () {
           $("#loginMsgContainer").show();
           $("#spinner").addClass("d-none");
         } else {
+          alert(msg.error);
+          $("#spinner").addClass("d-none");
         }
 
         // post order
