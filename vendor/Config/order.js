@@ -56,7 +56,7 @@ window.onload = function () {
     };
 
     axios
-      .post("http://localhost:3000/neworder", newOrder)
+      .post("https://smmboostclub.herokuapp.com//neworder", newOrder)
       .then(function (response) {
         const msg = response.data;
         if (msg.order) {
