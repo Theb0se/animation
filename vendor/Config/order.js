@@ -1,23 +1,49 @@
 window.onload = function () {
+  // get all order
+  axios
+    .get("https://smmboostclub.herokuapp.com/order/getallorder")
+    .then(function (response) {
+      console.log(response.data);
+      $("#totalOrder").text(response.data.length);
+      const allOrder = JSON.stringify(response.data);
+      localStorage.setItem("allorder", allOrder);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  const allOrder = JSON.parse(localStorage.getItem("allorder"));
+  if (allOrder) {
+    $("#totalOrder").text(allOrder.length);
+  }
+
   const services = {
     key: "8eac711290c821166246944b29bf1f62",
     action: "services",
   };
 
-  axios
-    .post("https://smmboostclub.herokuapp.com/", services)
-    .then(function (response) {
-      const data = response.data;
-      const services = data.filter((d) => {
-        return d.service.match("1983");
+  try {
+    axios
+      .post("https://smmboostclub.herokuapp.com/", services)
+      .then(function (response) {
+        const data = response.data;
+        const services = data.filter((d) => {
+          return d.service.match("1983");
+        });
+        console.log(services);
+        const servicesData = JSON.stringify(services);
+        localStorage.setItem("services", servicesData);
+      })
+      .catch(function (error) {
+        console.log(error);
       });
-      console.log(services);
-      const servicesData = JSON.stringify(services);
-      localStorage.setItem("services", servicesData);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  } catch (error) {
+    console.log(error);
+  }
 
   $("#CategorySelect").change(function () {
     const select = document.getElementById("serviceSelect");
@@ -34,7 +60,8 @@ window.onload = function () {
   });
 
   // post new order
-  const availServices = JSON.parse(localStorage.getItem("services"))[0];
+  const availServicesJson = JSON.parse(localStorage.getItem("services"));
+  const availServices = availServicesJson[0];
 
   $("#close").click(function () {
     $("#loginMsgContainer").hide();
@@ -71,9 +98,12 @@ window.onload = function () {
           $("#spinner").addClass("d-none");
           $("#orderCnf").css("background-color", "rgba(49, 248, 42, 0.651");
           $("#orderCnf").removeClass("d-none");
+          $("#orderCnf").text("Your Order Recevied");
         } else {
-          alert(msg.error);
           $("#spinner").addClass("d-none");
+          $("#orderCnf").css("background-color", "rgba(252, 64, 64, 0.568)");
+          $("#orderCnf").removeClass("d-none");
+          $("#orderCnf").text(msg.error);
         }
 
         // post order
@@ -104,24 +134,5 @@ window.onload = function () {
             });
         }
       });
-
-    // get all order
   });
-  axios
-    .get("https://smmboostclub.herokuapp.com/order/getallorder")
-    .then(function (response) {
-      console.log(response.data);
-      const allOrder = JSON.stringify(response.data);
-      localStorage.setItem("allorder", allOrder);
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-
-    .catch(function (error) {
-      const errnsg = JSON.stringify(error);
-    });
-
-  const allOrder = JSON.parse(localStorage.getItem("allorder"));
-  $("#totalOrder").text(allOrder.length);
 };
