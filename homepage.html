@@ -118,105 +118,110 @@
           class="d-flex flex-column justify-content-center align-items-center"
         >
           <div class="newOrder card mt-5 bg-light p-3">
-            <div class="LogingMsgContainer" id="loginMsgContainer">
-              <div class="loginMsg text-center p-2" id="signMsg">
-                <div class="head d-flex justify-content-between mb-0">
-                  <p>Your Order Recevied</p>
-                  <p id="close" style="font-size: 11px; font-weight: 600">Χ</p>
-                </div>
-                <div class="orderdt text-start">
-                  <p id="orderId"></p>
-                  <p id="service">
-                    Service - Telegram Members { Non Drop } ( 10 / Day ) ( Max -
-                    20K ) | Instant Start | Best Working - ₹ 120 Per 1000
-                  </p>
-                  <p id="link"></p>
-                  <p id="quantity"></p>
-                  <p id="charge"></p>
-                  <p id="balence"></p>
+            <form action="/index.html" method="post">
+              <div class="LogingMsgContainer" id="loginMsgContainer">
+                <div class="loginMsg text-center p-2" id="signMsg">
+                  <div class="head d-flex justify-content-between mb-0">
+                    <p>Your Order Recevied</p>
+                    <p id="close" style="font-size: 11px; font-weight: 600">
+                      Χ
+                    </p>
+                  </div>
+                  <div class="orderdt text-start">
+                    <p id="orderId"></p>
+                    <p id="service">
+                      Service - Telegram Members { Non Drop } ( 10 / Day ) ( Max
+                      - 20K ) | Instant Start | Best Working - ₹ 120 Per 1000
+                    </p>
+                    <p id="link"></p>
+                    <p id="quantity"></p>
+                    <p id="charge"></p>
+                    <p id="balence"></p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="category mt-2" id="vat">
-              <label for="serviceSelect">Category</label>
-              <select
-                id="CategorySelect"
-                class="form-select form-select-sm mt-1"
-                aria-label=".form-select-sm example"
-              >
-                <option value="select">Select Service</option>
-                <option value="935">Telegram - ( Non Drop ) Members</option>
-              </select>
-            </div>
-            <div class="service mt-3">
-              <label for="serviceSelect">Service</label>
-              <select
-                id="serviceSelect"
-                class="form-select form-select-sm mt-1"
-                aria-label=".form-select-sm example"
-              ></select>
-            </div>
-
-            <div class="serviceDesc mt-4">
-              <label for="serviceSelect">Description</label>
-              <div class="panel-body" id="desc">
-                <p id="descText" class="d-none">
-                  Non Drop Members <br />
-                  Last Drop ( 1 % ) <br />
-                  No Reffil & No Refund Gurantee <br />
-                  Best Service For Telegram Channels <br />
-                </p>
-              </div>
-            </div>
-
-            <div class="link mt-4">
-              <label for="link">Link</label>
-              <input
-                type="text"
-                autocomplete="on"
-                class="form-control"
-                id="linkInput"
-                rows="1"
-              />
-            </div>
-            <div class="link mt-4">
-              <label for="link">Quantity</label>
-              <input
-                type="number"
-                class="form-control"
-                id="qntInput"
-                min="100"
-                max="5000"
-              />
-              <p>Min: 100 - Max: 20000</p>
-            </div>
-            <div class="link mt-3">
-              <label for="link">Charge</label>
-              <input
-                type="tel"
-                class="form-control"
-                id="chrgInput"
-                value=""
-                disabled
-              />
-            </div>
-
-            <div class="bttn mt-3">
-              <button type="button" class="btn btn-primary" id="PlaceOrder">
-                Place Order
-                <div
-                  class="spinner-border text-danger spinner-border-sm d-none ms-3"
-                  role="status"
-                  id="spinner"
+              <div class="category mt-2" id="vat">
+                <label for="serviceSelect">Category</label>
+                <select
+                  id="CategorySelect"
+                  class="form-select form-select-sm mt-1"
+                  aria-label=".form-select-sm example"
                 >
-                  <span class="sr-only">Loading...</span>
-                </div>
-              </button>
-            </div>
+                  <option value="select">Select Service</option>
+                  <option value="935">Telegram - ( Non Drop ) Members</option>
+                </select>
+              </div>
+              <div class="service mt-3">
+                <label for="serviceSelect">Service</label>
+                <select
+                  id="serviceSelect"
+                  class="form-select form-select-sm mt-1"
+                  aria-label=".form-select-sm example"
+                ></select>
+              </div>
 
-            <div class="orderCnf text-center p-2  mt-4 d-none" id="orderCnf">
-              
-            </div>
+              <div class="serviceDesc mt-4">
+                <label for="serviceSelect">Description</label>
+                <div class="panel-body" id="desc">
+                  <p id="descText" class="d-none">
+                    Non Drop Members <br />
+                    Last Drop ( 1 % ) <br />
+                    No Reffil & No Refund Gurantee <br />
+                    Best Service For Telegram Channels <br />
+                  </p>
+                </div>
+              </div>
+
+              <div class="link mt-4">
+                <label for="link">Link</label>
+                <input
+                  type="text"
+                  autocomplete="on"
+                  class="form-control"
+                  id="linkInput"
+                  rows="1"
+                />
+              </div>
+              <div class="link mt-4">
+                <label for="link">Quantity</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="qntInput"
+                  min="100"
+                  max="5000"
+                />
+                <p>Min: 100 - Max: 20000</p>
+              </div>
+              <div class="link mt-3">
+                <label for="link">Charge</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="chrgInput"
+                  value=""
+                  disabled
+                />
+              </div>
+
+              <div class="bttn mt-3">
+                <button type="button" class="btn btn-primary" id="PlaceOrder">
+                  Place Order
+                  <div
+                    class="spinner-border text-danger spinner-border-sm d-none ms-3"
+                    role="status"
+                    id="spinner"
+                  >
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </button>
+              </div>
+
+              <div
+                class="orderCnf text-center p-2 mt-4 d-none"
+                id="orderCnf"
+              ></div>
+            </form>
           </div>
         </div>
       </div>

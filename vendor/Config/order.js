@@ -60,8 +60,7 @@ window.onload = function () {
   });
 
   // post new order
-  const availServicesJson = JSON.parse(localStorage.getItem("services"));
-  const availServices = availServicesJson[0];
+
 
   $("#close").click(function () {
     $("#loginMsgContainer").hide();
@@ -78,7 +77,7 @@ window.onload = function () {
     const newOrder = {
       key: "8eac711290c821166246944b29bf1f62",
       action: "add",
-      service: availServices.service,
+      service: "1983",
       link: link,
       quantity: quantity,
     };
